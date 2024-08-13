@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://66bbb43b94302c92ef44f8eb--stellar-faloodeh-8580aa.netlify.app",
 ]
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',

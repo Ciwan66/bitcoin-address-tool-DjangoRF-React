@@ -32,7 +32,7 @@ const BitcoinAddressGenerator = () => {
   const handleGeneratePrivateKey = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-private-key/"
+        "https://bitcoin-address-tool-django-rf-react.vercel.app/generate-private-key/"
       );
       setPrivateKeyDemical(response.data.private_key_decimal);
       setPrivateKeyBinary(response.data.private_key_binary);
@@ -48,7 +48,7 @@ const BitcoinAddressGenerator = () => {
   const handleGeneratePublicKey = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-public-key/",
+        "https://bitcoin-address-tool-django-rf-react.vercel.app/generate-public-key/",
         { private_key: privateKeyHex }
       );
       setPublicKeyUnCo(response.data.uncompressed_public_key);
@@ -65,7 +65,7 @@ const BitcoinAddressGenerator = () => {
   const handleGeneratePublicKeyHash = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-public-key-hash/",
+        "https://bitcoin-address-tool-django-rf-react.vercel.app/generate-public-key-hash/",
         { public_key: publicKeyCo }
       );
       setPublicKeyHash(response.data.public_key_hash);
@@ -82,7 +82,7 @@ const BitcoinAddressGenerator = () => {
   const handleGenerateBitcoinAddress = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/generate-bitcoin-address/",
+        "https://bitcoin-address-tool-django-rf-react.vercel.app/generate-bitcoin-address/",
         { public_key_hash: publicKeyHash }
       );
       setBitcoinAddress(response.data.bitcoin_address);
@@ -99,7 +99,7 @@ const BitcoinAddressGenerator = () => {
     try {
       setError(""); // Clear previous errors
       const response = await axios.post(
-        "http://localhost:8000/generate-bech32-address-from-hash/",
+        "https://bitcoin-address-tool-django-rf-react.vercel.app/generate-bech32-address-from-hash/",
         {
           public_key_hash: publicKeyHash,
         }
