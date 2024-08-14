@@ -42,10 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
 ]
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
-    "https://66bbb43b94302c92ef44f8eb--stellar-faloodeh-8580aa.netlify.app",
-]
+CORS_ALLOW_ALL_ORIGINS = True 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
